@@ -33,9 +33,16 @@ The solution automates the process of dashboard setup and provides reference con
 
 The solution follows nested stack approach for deployment of workload stacks. The workload stacks can be deployed individually as well.
 
-![](./deployment.png)
+<img src="./deployment.png" width="600" height="350">
 
+The architecture can be broken into two components. **User Interaction** and **Dashboard Management**. The workflow is as follows:
 
+- User puts tag on the EC2 instance
+- _tagHandler_ lambda function fetches instances with the tag and updates SSM Parameter Store
+- CloudWatch Events rule gets triggered when SSM parameter is updated, and invokes _dashboardHandler_ lambda
+- _dashboardHandler_ function reads the SSM Parameter Store value and updates the CloudWatch dashboard widgets
+
+<img src="./architecture.png" width="600" height="350">
 
 ## Installing pre-packaged solution template
 

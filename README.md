@@ -33,7 +33,7 @@ The solution automates the process of dashboard setup and provides reference con
 
 The solution follows nested stack approach for deployment of workload stacks. The workload stacks can be deployed individually as well.
 
-![](./deployment.png | width=100 | height=100)
+![](./deployment.png | width=100)
 
 
 
